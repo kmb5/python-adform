@@ -99,7 +99,7 @@ class AdformClient():
                     'Line item name': report.get('name'),
                     'Budget amount': report.get('budget', {}).get('money', {}).get('amount'),
                     'Paused': report.get('paused'),
-                    'Line item ID - PLACEMENT': report.get('placementId')
+                    'Line item Placement ID': report.get('placementId')
                 })
         return results
 
