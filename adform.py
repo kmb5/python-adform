@@ -60,18 +60,6 @@ class AdformClient():
         if response.status_code == 200:
             return json.loads(response.text)
         return response.status_code
-      
-    def get_campaigns(self):
-        # Needs AdformClient instance with buyer.campaigns.api or buyer.campaigns.api.readonly scope
-        # Returns a list of dictionaries for each campaign containing the campaign ID, campaign name and campaign status
-        # Eg. [{'Campaign ID': 23425, 'Campaign Name': 'Test1', 'Status': 'Active'}, {'Campaign ID': 987985, 'Campaign Name': 'Test2', 'Status': 'Paused'}, {...}]
-        # If there is an error with the request (eg. timeout, etc.) it returns the status code of the error instead of a list.
-        url = 'v1/buyer/campaigns/'
-        response = requests.get(self.base_url + url, headers=self.header)
-        if response.status_code == 200:
-            return [{'Campaign ID': campaign_dict.get('id'), 'Campaign Name': campaign_dict.get('name'), 'Campaign Type': campaign_dict.get('type'), 'Status': campaign_dict.get('status')} for campaign_dict in json.loads(response.text)]
-        return response.status_code
-
 
     def get_orders_per_campaigns(self, campaign_ids, active=['true']):
         # Doesn't need any specific scope, works with any
