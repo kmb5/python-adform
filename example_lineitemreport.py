@@ -6,8 +6,8 @@ from adform import AdformClient
 
 # ---- CONSTANTS ---- #
 
-CLIENT_ID = 'eapi.vco.viessmann.de@clients.adform.com'
-CLIENT_SECRET = 'd9f2mZgcMb2hLNLgTNObg1h6kA_ASpgciXM2pnom'
+CLIENT_ID = 'YOUR_CLIENT_ID'
+CLIENT_SECRET = 'YOUR_CLIENT_SECRET'
 BASE_URL = 'https://api.adform.com/'
 SCOPES = [
     'https://api.adform.com/scope/buyer.rtb.lineitem',
